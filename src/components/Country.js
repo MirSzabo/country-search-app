@@ -6,6 +6,12 @@ const Country = ({ country }) => {
   const { name, capital, population, languages, flag } = country;
 
   const [weatherData, setWeatherData] = useState();
+  const [reload, setReload] = useState(false);
+
+  useEffect(() => {
+    let interval = setInterval(() => setReload(true), 1000 * 3);
+    return () => clearInterval(interval);
+  });
 
   useEffect(() => {
     let didCancel = false;
@@ -17,11 +23,10 @@ const Country = ({ country }) => {
     const url = api + cityName + key + units;
     //console.log(url);
 
-    axios.get(url).then((response) => {
-      if (!didCancel) {
+      axios.get(url).then(response => {
         setWeatherData(response.data);
-      }
-    });
+        console.log(response.data);
+    }, [reload]);
 
     return () => {
       didCancel = true;
