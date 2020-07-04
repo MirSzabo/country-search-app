@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Filter from "./components/Filter";
 import ShowCountries from "./components/ShowCountries";
+import styled from "styled-components";
+
+const StyledCountryApp = styled.div`
+  margin-top: 2rem;
+`;
 
 const App = () => {
   const [countries, setCountries] = useState([]);
@@ -20,10 +25,12 @@ const App = () => {
   );
 
   return (
-    <div>
+    <StyledCountryApp>
       <Filter value={filter} filterHandle={filterHandle} />
-      {countriesInitial.length > 0 && <ShowCountries countriesInitial={countriesInitial} />}
-    </div>
+      {countriesInitial.length > 0 && (
+        <ShowCountries countriesInitial={countriesInitial} />
+      )}
+    </StyledCountryApp>
   );
 };
 

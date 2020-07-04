@@ -1,4 +1,13 @@
 import React from "react";
+import styled from "styled-components";
+
+const StyledWeather = styled.div`
+  font: 1em sans-serif;
+  line-height: 2;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+`;
 
 const Weather = ({ data }) => {
   const {
@@ -18,7 +27,7 @@ const Weather = ({ data }) => {
   const dateSunset = formatTime(new Date(sunset * 1000));
 
   return (
-    <div>
+    <StyledWeather>
       <h2>Weather in {name}</h2>
       <span>
         <b>Temperature: </b>
@@ -37,7 +46,7 @@ const Weather = ({ data }) => {
       </div>
       <div>
         <b>Humidity: </b>
-        {humidity}
+        {humidity} %
       </div>
       <div>
         <b>Sunrise: </b>
@@ -47,7 +56,7 @@ const Weather = ({ data }) => {
         <b>Sunset: </b>
         {dateSunset}
       </div>
-    </div>
+    </StyledWeather>
   );
 };
 

@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Countries from "./Countries";
 import Country from "./Country";
+import styled from "styled-components";
+
+const StyledOutput = styled.div`
+  font: 1em sans-serif;
+  font-size: 14px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+`;
 
 const ShowCountries = ({ countriesInitial }) => {
   const [countries, setCountries] = useState([]);
@@ -19,17 +28,17 @@ const ShowCountries = ({ countriesInitial }) => {
     ]);
 
   return (
-    <div>
+    <StyledOutput>
       {noMatch ? (
       ''
       ) : manyMatches ? (
-        <p>Too many matches, specify another filter</p>
+        <p>Too many matches</p>
       ) : singleMatch ? (
         <Country country={countries[0]} />
       ): (
         <Countries countries={countries} handleClick={handleCLick} />
       )}
-    </div>
+    </StyledOutput>
   );
 };
 

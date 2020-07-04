@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Weather from "./Weather";
+import styled from "styled-components";
+
+const StyledOutput = styled.div`
+  display: flex;
+`;
+const StyledCountry = styled.div`
+  font: 1em sans-serif;
+  line-height: 2;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+`;
+const List = styled.ul`
+  list-style-type: none;
+`;
 
 const Country = ({ country }) => {
   const { name, capital, population, languages, flag } = country;
@@ -23,10 +38,13 @@ const Country = ({ country }) => {
     const url = api + cityName + key + units;
     //console.log(url);
 
-      axios.get(url).then(response => {
+    axios.get(url).then(
+      (response) => {
         setWeatherData(response.data);
         console.log(response.data);
-    }, [reload]);
+      },
+      [reload]
+    );
 
     return () => {
       didCancel = true;
@@ -36,15 +54,20 @@ const Country = ({ country }) => {
   const languageList = languages.map(({ name }) => <li key={name}>{name}</li>);
 
   return (
-    <div>
-      <h1>{name}</h1>
-      <p>Capital: {capital}</p>
-      <p>Population: {population}</p>
-      <p>Languages:</p>
-      <ul>{languageList}</ul>
-      <img src={flag} alt="Flag of the country" width="200" height="200" />
+    <StyledOutput>
+      <StyledCountry>
+        <h1>{name}</h1>
+        <p><b>Capital:</b> {capital}</p>
+        <p><b>Population:</b> {population}</p>
+        <p><b>Languages: </b></p>
+        <List>
+          {" "}
+          <ul>{languageList}</ul>
+        </List>
+        <img src={flag} alt="Flag of the country" width="200" height="200" />
+      </StyledCountry>
       {weatherData && <Weather data={weatherData} />}
-    </div>
+    </StyledOutput>
   );
 };
 export default Country;
