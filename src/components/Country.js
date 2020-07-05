@@ -33,6 +33,7 @@ const Country = ({ country }) => {
   });
 
   useEffect(() => {
+    // eslint-disable-next-line no-unused-vars
     let didCancel = false;
 
     const api = "https://api.openweathermap.org/data/2.5/weather?q=";
