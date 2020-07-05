@@ -4,7 +4,6 @@ import Country from "./Country";
 import styled from "styled-components";
 
 const StyledOutput = styled.div`
-  font: 1em sans-serif;
   font-size: 14px;
   margin: auto;
   width: 50%;

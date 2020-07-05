@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledList = styled.div`
-  font: 1em sans-serif;
   line-height: 2;
   margin: auto;
   width: 50%;

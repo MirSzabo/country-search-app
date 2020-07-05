@@ -2,11 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledWeather = styled.div`
-  font: 1em sans-serif;
   line-height: 2;
-  margin: auto;
+  margin: 2rem;
   width: 50%;
   padding: 10px;
+  border: 1px solid black;
+  background: white;
+  box-shadow: 10px 10px 5px grey;
+  border-radius: 25px;
 `;
 
 const Weather = ({ data }) => {

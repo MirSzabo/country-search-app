@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledInput = styled.div`
-  font: 1em sans-serif;
   font-weight: bold;
+  font-size: 2rem;
   margin: auto;
   width: 50%;
   padding: 10px;
