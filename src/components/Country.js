@@ -8,14 +8,13 @@ const StyledOutput = styled.div`
   flex-shrink: 1;
 `;
 const StyledCountry = styled.div`
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 5px grey;
+  border-radius: 10px;
+  margin: 2rem;
   line-height: 2;
-  margin: auto;
   width: 50%;
-  padding: 10px;
-  border: 1px solid black;
-  background: white;
-  box-shadow: 10px 10px 5px grey;
-  border-radius: 25px;
+  padding: 10px;  
 `;
 const List = styled.ul`
   list-style-type: none;
@@ -59,15 +58,21 @@ const Country = ({ country }) => {
   const languageList = languages.map(({ name }) => <li key={name}>{name}</li>);
 
   const formatNumber = (num) => {
-    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
-}
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+  };
   return (
     <StyledOutput>
       <StyledCountry>
         <h1>{name}</h1>
-        <p><b>Capital:</b> {capital}</p>
-        <p><b>Population:</b> {formatNumber(population)}</p>
-        <p><b>Languages: </b></p>
+        <p>
+          <b>Capital:</b> {capital}
+        </p>
+        <p>
+          <b>Population:</b> {formatNumber(population)}
+        </p>
+        <p>
+          <b>Languages: </b>
+        </p>
         <List>
           {" "}
           <ul>{languageList}</ul>

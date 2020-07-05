@@ -4,12 +4,4 @@ import App from "./App";
 // eslint-disable-next-line no-unused-vars
 import style from "./index.css";
 
-const Countries = () => {
-  return (
-    <div>
-      <App />
-    </div>
-  );
-};
-
-ReactDOM.render(<Countries />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

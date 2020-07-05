@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 body {
-  margin: 0;
-  color: #202020;
+ /* color: #202020;*/
   font: Baskerville;
-  font-family: "Pacifico", cursive;
-  background: #00416A;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #E4E5E6, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #E4E5E6, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  margin: 0;
+  padding: 0;
+  background: url("./images/main.jpg");
+  background-repeat: no-repeat;
+  color:#202020;
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  background-size: 100%;
 }
 * {
   margin: 0;
