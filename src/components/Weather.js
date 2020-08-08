@@ -8,7 +8,7 @@ const StyledWeather = styled.div`
   line-height: 2;
   margin: 2rem;
   width: 50%;
-  padding: 10px;
+  padding: 50px;
 `;
 
 const Weather = ({ data }) => {

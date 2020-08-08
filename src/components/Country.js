@@ -14,7 +14,7 @@ const StyledCountry = styled.div`
   margin: 2rem;
   line-height: 2;
   width: 50%;
-  padding: 10px;  
+  padding: 50px;  
 `;
 const List = styled.ul`
   list-style-type: none;
